@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Milena's Site</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- w3 Schools -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- fontawesome icon -->
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- KEEPING CSS STYLE HERE BECAUSE THE WEBPAGE WAS EXPERIENCING ISSUES WHEN SEPARATE -->
+<style>
+	html,body,h1,h2,h3,h4,h5,h6 {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif}
+	body  {
+		background-color: #c1cbca;
+		background-image: url("images/forest-weather-mirror2.jpg");
+		height: 100%; 
+		background-position: 0px -40px;
+		background-repeat: repeat-y;
+		background-size: cover;
+	}
+	.icon-size {
+		width: 100px;
+		height: 100px;
+		text-align: center;
+	}
+	table {
+		border-collapse: separate;
+		border-spacing: 20;
+	}
+	table tr:first-child th:first-child {
+		border-top-left-radius: 10px;
+	}
+	table tr:first-child th:last-child {
+		border-top-right-radius: 10px;
+	}
+	table tr:last-child td:first-child {
+		border-bottom-left-radius: 10px;
+	}
+	table tr:last-child td:last-child {
+		border-bottom-right-radius: 10px;
+	}
+	#weather tr:nth-child(odd) {}
+	#weather tr:nth-child(even) {}
+	#weather td:hover {
+		background-color: rgb(76, 176, 80); /* Fallback color */
+		/*background-color: rgb(76, 176, 80 ,0.4);*/
+		color: white;
+		border-style: none;
+	}
+	#weather td:hover hr {}
+	#weather td {
+		border-radius: 10px;
+		border-style: none;
+	}
+	.city-location {
+		text-align: center;
+		border-style: none;
+		border-radius: 10px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+		width: 22.5em;
+		margin: auto;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.form-group {
+		display: inline-block;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	footer {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+</style>
+
+<body class="w3-light-grey">
+	<div class="navigation-bar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="./index.html">
+				<img src="images/cse383.png" height="40" alt="CSE383">
+			</a>
+
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="./main_update.html">About <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./calculator_update.html">Calculator</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="./weather_forecast_update.html">Weather Forecast</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<!-- Page Container -->
+	<div class="w3-content w3-margin-top w3-padding-64" style="max-width:1400px;">
+		<!-- The Grid -->
+		<div class="w3-row-padding">
+			<!-- Left Column -->
+			<div class="w3-twothird">
+				<div class="w3-container w3-card w3-white w3-margin-bottom">
+					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-question-circle-o fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Help</h2>
+					<div class="w3-container">
+						<p>This weather forecast page lets the user enter a ZIP code, executes the request using AJAX, retrieves the latitude and longitude from a cloud API, executes the request again, and then retrieves the 7 day forecast with icons and the weather outlook.</p>
+						<br>
+						<div class="form-group">
+							<input type="number" id="zipcode" name="zipcode" placeholder="Zip">
+						</div>
+						<div class="form-group">
+							<button id="findLocation" class="w3-button w3-green">Find</button>
+						</div>
+						<br><span id="error" style="color: #303030;"></span>
+						<hr>
+					</div>
+				</div>
+				<!-- End Left Column -->
+			</div>
+		</div>
+		<!-- End Grid -->
+	</div>
+
+	<div class="w3-container w3-margin-bottom w3-padding-16 w3-mobile">
+		<div id="hidden" style="display: none;">
+			<div class="w3-card w3-green w3-text-white city-location">
+				<p id="city" class="w3-xxlarge"></p>
+				<p id="location"></p>
+			</div>
+			<div class="w3-container w3-responsive">
+				<table id="weather" class="table">
+					<tbody class="w3-card w3-white w3-text-grey">
+						<tr id="row1">
+							<!-- Weather results display here -->
+						</tr>
+						<tr id="row2">
+							<!-- Weather results display here -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- End Right Column -->
+</div>
+
+<!-- End Page Container -->
+</div>
+
+<footer id="foot" class="w3-container w3-green w3-center w3-padding-16" style="position: fixed;">
+	<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> and <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/#css" target="_blank">bootstrap</a></p>
+</footer>
+
+<!-- KEEPING JAVASCRIPT SCRIPT HERE BECAUSE THE WEBPAGE WAS EXPERIENCING ISSUES WHEN SEPARATE -->
+<script>
+	$('#findLocation').click(function (){
+		var zipcode = document.getElementById("zipcode").value;
+		var length = zipcode.length;
+		if (zipcode != '' && length == '5') {
+			getLocation(zipcode);
+		} else {
+			$('#error').html('Please enter a 5 digit ZIP code.');
+		}
+	});
+
+	var baseurl1 = "https://api.clearllc.com/api/v2";
+	var baseurl2 = "https://api.openweathermap.org/data/2.5";
+	var address1 = "/miamidb/_table/zipcode";
+	var address2 = "/onecall";
+	var api_key = "bed859b37ac6f1dd59387829a18db84c22ac99c09ee0f5fb99cb708364858818";
+	var appid = "40c81f00fdfcf37157a3424c3ee3eb04";
+	var exclude = "hourly";
+	var latitude;
+	var longitude;
+	var city;
+	var run = 0;
+
+	function getLocation(zipcode) {
+		if (run > 0) {
+			clearResults();
+		}
+		$.ajax({
+			url: baseurl1 + address1 + "?api_key=" + api_key+ "&ids=" + zipcode,
+			method: "GET"
+		}).done(function(data) {
+			var x = document.getElementById("hidden");
+			var f = document.getElementById("foot");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			}
+			if (f.style.position === "fixed") {
+				f.style.position = "static";
+			}
+			latitude = data.resource[0].latitude;
+			longitude = data.resource[0].longitude;
+			city = data.resource[0].city;
+			setLocation(city, latitude, longitude);
+			getWeather(latitude, longitude);
+		}).fail(function(error) {
+			console.log("getLocation: error", error.statusText);
+		});
+		run++;
+	}
+
+	function setLocation(city, latitude, longitude){
+		$("#city").html(city);
+		$("#location").html("<b>Latitude: </b>" + latitude + " | <b>Longitude: </b>" + longitude);
+	}
+
+	function getWeather(latitude, longitude) {
+		$.ajax({
+			url: baseurl2 + address2 + "?lat=" + latitude + "&lon=" + longitude + "&units=imperial" + "&appid=" + appid,
+			method: "GET"
+		}).done(function(data) {
+			setWeather(data);
+			console.log(data);
+		}).fail(function(error) {
+			console.log("getWeather: error", error.statusText);
+		});
+
+	}
+
+	function setWeather(data) {
+		var i;
+		for (i = 0; i < 8; i++) {
+			var temp = data.daily[i].temp.day;
+			var humidity = data.daily[i].humidity;
+			var wind = data.daily[i].wind_speed;
+			var windDir = data.daily[i].wind_deg;
+			var clouds = data.daily[i].clouds;
+			var pressure = data.daily[i].pressure;
+			var dew = data.daily[i].dew_point;
+			var icon = data.daily[i].weather[0].icon;
+			var description = data.daily[i].weather[0].description;
+			getResults(i, temp, humidity, wind, windDir, clouds, pressure, dew, icon, description);
+		} 
+	}
+
+	function getResults(day, temp, humidity, wind, windDir, clouds, pressure, dew, icon, description) {
+		n = getDate();
+
+		if (n == "Monday") {
+			var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+		} else if (n == "Tuesday") {
+			var week = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+		} else if (n == "Wednesday") {
+			var week = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"];
+		} else if (n == "Thursday") {
+			var week = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+		} else if (n == "Friday") {
+			var week = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+		} else if (n == "Saturday") {
+			var week = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		} else if (n == "Sunday") {
+			var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+		}
+
+		var table = document.getElementById("weather");
+		var row1 = document.getElementById("row1");
+		var row2 = document.getElementById("row2");
+		var cell;
+
+		if (day < '4') {
+			cell = row1.insertCell(day);			  		
+		} else {
+			cell = row2.insertCell(day - 4);
+		}
+
+		cell.innerHTML = "<b>" + week[day] + "</b><br>";
+		cell.innerHTML += "<img class='icon-size' src=" + getImg(icon) + "></img><br>";
+		cell.innerHTML += "<i>" + description + "</i><br>";
+		cell.innerHTML += "<i>" + temp + " °F</i><hr>";
+		cell.innerHTML += "<i class='fas fa-wind'></i> " + wind + " miles/hour " + degToCompass(windDir) + "<br>";
+		cell.innerHTML += "<i class='fas fa-cloud'></i> " + clouds + "% cloudy<br>";
+		cell.innerHTML += "<b>Humidity: </b>" + humidity + "%<br>";
+		cell.innerHTML += "<b>Pressure: </b>" + pressure + " hPa<br>";
+		cell.innerHTML += "<b>Dew Point: </b>" + dew + " °F</li>";
+	}
+
+	function clearResults() {
+		var table = document.getElementById("weather"),
+		rows = table.rows;
+
+		for (var i = 0; i < rows.length; i++) {
+			for (var j = rows[i].cells.length - 1; j >= 0; j--) {
+				rows[i].deleteCell(j);
+			}
+		}
+	}
+
+	function getDate() {
+		var d = new Date();
+		var weekday = new Array(7);
+		weekday[0] = "Sunday";
+		weekday[1] = "Monday";
+		weekday[2] = "Tuesday";
+		weekday[3] = "Wednesday";
+		weekday[4] = "Thursday";
+		weekday[5] = "Friday";
+		weekday[6] = "Saturday";
+
+		var n = weekday[d.getDay()];
+		return n;
+	}
+
+	function getImg(icon) {
+		return "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+	}
+
+	function degToCompass(degree) {
+		var val = Math.floor((degree / 22.5) + 0.5);
+		arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+		var direction = arr[(val % 16)];
+		return direction;
+	}
+
+</script>
+
+</body>
+</html>

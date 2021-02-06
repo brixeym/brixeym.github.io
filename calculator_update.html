@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Milena's Site</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- w3 Schools -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- fontawesome icon -->
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- KEEPING CSS STYLE HERE BECAUSE THE WEBPAGE WAS EXPERIENCING ISSUES WHEN SEPARATE -->
+<style>
+	html,body,h1,h2,h3,h4,h5,h6 {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif}
+	body {
+		background-color: #c6cac9;
+		background-image: url("images/forest-calculator-mirror.jpg");
+		height: 100%; 
+		background-position: left-top;
+		background-repeat: repeat-y;
+		background-size: cover;
+	}
+	.contain {
+		display: flex;
+		justify-content: center;
+	}
+	.display {
+		background-color: rgb(232,232,232);
+		padding: 15px;
+		height: 90px;
+		width: 280px;
+		text-align: right;
+		font-size: 20px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	button {
+		height: 45px;
+		background-color: rgb(232,232,232);
+		font-size: 20px;
+	}
+	button:hover {
+		cursor: pointer;
+		background-color: rgb(190,190,190);
+	}
+	button:active {
+		background-color: rgb(160,160,160);
+	}
+	footer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+</style>
+
+<body class="w3-light-grey">
+	<div class="navigation-bar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="./index.html">
+				<img src="images/cse383.png" height="40" alt="CSE383">
+			</a>
+
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="./main_update.html">About <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="./calculator_update.html">Calculator</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./weather_forecast_update.html">Weather Forecast</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<!-- Page Container -->
+	<div class="w3-content w3-margin-top w3-padding-64" style="max-width:1400px;">
+		<!-- The Grid -->
+		<div class="w3-row-padding">
+			<!-- Left Column -->
+			<div class="w3-twothird">
+				<div class="w3-container w3-card w3-white w3-margin-bottom">
+					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-question-circle-o fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Help</h2>
+					<div class="w3-container">
+						<p>This calculator takes in two operands and an operation (thus it cannot perform PEMDAS), and executes the request by using AJAX to send it to a cloud based API server, which will respond with an answer that will be displayed on the calculator.<br>The calculator will display an error if either one of the operands or the operation is missing, or when the user attempts to divide by zero.</p>
+						<hr>
+					</div>
+				</div>
+				<!-- End Left Column -->
+			</div>
+
+			<!-- Right Column -->
+			<div class="w3-third">
+				<div class="w3-container w3-card w3-white w3-margin-bottom w3-cell-middle w3-padding-32 w3-mobile contain">
+					<div class="calculator">
+						<div class="display w3-margin-bottom">
+							<p id="output"></p>
+						</div>
+						<div class="w3-bar w3-margin-bottom">
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 138px;" id="r1-1" onclick="forclear()" style="width: 138px;">C</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r1-3" onclick="backspace()" style="width: 68px;"><i class='fas fa-backspace'></i></button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r1-4" value="/" onclick="fordisplay('/')">/</button>
+						</div>
+						<div class="w3-bar w3-margin-bottom">
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r2-4" value="*" onclick="fordisplay('*')">*</button>
+						</div>
+						<div class="w3-bar w3-margin-bottom">
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r3-4" value="-" onclick="fordisplay('-')">-</button>
+						</div>
+						<div class="w3-bar w3-margin-bottom">
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 67px;" id="r4-4" value="+" onclick="fordisplay('+')">+</button>
+						</div>
+						<div class="w3-bar">
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 138px;" id="r5-1" vakue="0" onclick="fordisplay('0')">0</button>
+							<button class="w3-button w3-grey" style="border-radius: 16px; width: 138px;" id="r5-2"  value="=" onclick="solve()">=</button>
+						</div>
+					</div>
+				</div>
+				<!-- End Right Column -->
+			</div>
+
+		</div>
+		<!-- End Grid -->
+	</div>
+	<!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-green w3-center w3-padding-16">
+	<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> and <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/#css" target="_blank">bootstrap</a></p>
+</footer>
+
+<!-- KEEPING JAVASCRIPT SCRIPT HERE BECAUSE THE WEBPAGE WAS EXPERIENCING ISSUES WHEN SEPARATE -->
+<script language="JavaScript">
+	function forclear() {
+		document.getElementById("output").innerHTML = "";
+	}
+
+	function backspace() {
+		var equation = document.getElementById("output").innerHTML;
+		var editedEquation = equation.slice(0, -1);
+		document.getElementById("output").innerHTML = editedEquation;
+	}
+
+	function fordisplay(value) {
+		document.getElementById("output").innerHTML += value;
+	}
+
+	function solve() {
+		var baseurl = "https://api.clearllc.com/api/v2/math/";
+		var api_key = "bed859b37ac6f1dd59387829a18db84c22ac99c09ee0f5fb99cb708364858818";
+
+		var equation = document.getElementById("output").innerHTML;
+		var length = equation.length;
+		var divideByZero = equation.indexOf("/0");
+
+		var divide = equation.indexOf("/");
+		var multiply = equation.indexOf("*");
+		var subtract = equation.indexOf("-");
+		var add = equation.indexOf("+");
+
+		if (divide != -1) /*if operation is divide*/ {
+			var operation = "divide";
+			var n1 = equation.slice(0, divide);
+			var n2 = equation.slice(divide + 1);
+			if (divideByZero != -1) /*if operation is divide and operand is 0*/ {
+				$('#output').html("Error: cannot divide by 0");
+			} else if (divide == 0) /*if operation is first term*/ {
+				$('#output').html("Error: missing operand 1");
+			} else if (divide == (length - 1)) /*if operation is last term*/ {
+				$('#output').html("Error: missing operand 2");
+			} else {
+				$.ajax({
+					url: baseurl + operation + "?api_key=" + api_key + " &n1=" + n1 + "&n2=" + n2,
+					contentType: "application/json",
+					dataType: "json",
+					method: "GET",
+				}).done(function(data) {
+					console.log(data);
+					$("#output").html(data.result);
+				}).fail(function(error) {
+					console.log("Error:", error.statusText);
+				});
+			}
+		} else if (multiply != -1) {
+			var operation = "multiply";
+			var n1 = equation.slice(0, multiply);
+			var n2 = equation.slice(multiply + 1);
+			if (multiply == 0) {
+				$('#output').html("Error: missing operand 1");
+			} else if (multiply == (length - 1)) {
+				$('#output').html("Error: missing operand 2");
+			} else {
+				$.ajax({
+					url: baseurl + operation + "?api_key=" + api_key + " &n1=" + n1 + "&n2=" + n2,
+					contentType: "application/json",
+					dataType: "json",
+					method: "GET",
+				}).done(function(data) {
+					console.log(data);
+					$("#output").html(data.result);
+				}).fail(function(error) {
+					console.log("Error:", error.statusText);
+				});
+			}
+		} else if (subtract != -1) {
+			var operation = "subtract";
+			var n1 = equation.slice(0, subtract);
+			var n2 = equation.slice(subtract + 1);
+			if (subtract == 0) {
+				$('#output').html("Error: missing operand 1");
+			} else if (subtract == (length - 1)) {
+				$('#output').html("Error: missing operand 2");
+			} else {
+				$.ajax({
+					url: baseurl + operation + "?api_key=" + api_key + " &n1=" + n1 + "&n2=" + n2,
+					contentType: "application/json",
+					dataType: "json",
+					method: "GET",
+				}).done(function(data) {
+					console.log(data);
+					$("#output").html(data.result);
+				}).fail(function(error) {
+					console.log("Error:", error.statusText);
+				});
+			}
+		} else if (add != -1) {
+			var operation = "add";
+			var n1 = equation.slice(0, add);
+			var n2 = equation.slice(add + 1);
+			if (add == 0) {
+				$('#output').html("Error: missing operand 1");
+			} else if (add == (length - 1)) {
+				$('#output').html("Error: missing operand 2");
+			} else {
+				$.ajax({
+					url: baseurl + operation + "?api_key=" + api_key + " &n1=" + n1 + "&n2=" + n2,
+					contentType: "application/json",
+					dataType: "json",
+					method: "GET",
+				}).done(function(data) {
+					console.log(data);
+					$("#output").html(data.result);
+				}).fail(function(error) {
+					console.log("Error:", error.statusText);
+				});
+			}
+		}
+	}
+</script>
+
+</body>
+</html>
